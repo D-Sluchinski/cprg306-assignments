@@ -1,5 +1,4 @@
-//import {Student} from "./StudentInfo.js";
-import {item} from "./item.js";
+
 
 export default function Page() {
   
