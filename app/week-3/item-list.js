@@ -1,4 +1,4 @@
-import Item from "./item";
+import Item from "./item"; //no curly brackets
 
 export function ItemList ({name, quantity, category})
 {
