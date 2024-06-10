@@ -1,0 +1,20 @@
+
+
+//2024-06-10
+
+
+"use client" // "use client" is used for: 2 things
+/*
+2 component
+_______________________ 
+CLIENT COMPONENT: 
+    if(req.url ==== "/")
+    res.write("<h1>page!</h1>")
+        HAPPENS IN THE BROWSESR
+            DIRECTED TO NODE.JS THAT WE HAVE COMPONENTS THAT IS USED BY THE USER
+
+SERVER COMPONENT: 
+    node.js works as server side ex: 
+    
+
+*/
