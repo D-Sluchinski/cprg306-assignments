@@ -89,7 +89,7 @@ export default function NewItem (){
                 alert(`name: ${addNewItem.name} quantity: ${addNewItem.quantity}, category: ${addNewItem.category}`);
 
             //LOG ITEM INTO CONSOLE
-            console.log(addNewItem.name + addNewItem.quantity + addNewItem.category );
+            console.log(addNewItem.name + " " +  addNewItem.quantity + " " +  addNewItem.category);
 
             //RESETS
             setName("");
