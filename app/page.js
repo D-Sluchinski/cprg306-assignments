@@ -17,6 +17,10 @@ export default function Home() {
             <li>
               <a href="./week-4" class="hover:underline">week-4 link</a>
             </li>
+            <li>
+              <a href="./week-5" class="hover:underline">week-5 link</a>
+            </li>
+
             {/* <li>
               <a href="ListDemo" class="hover:underline">ListDemo</a>
             </li> */}

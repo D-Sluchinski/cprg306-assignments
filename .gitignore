@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+app/StateDemo/students.json
+app/ListDemo/page.js
+app/StateDemo/page.js
+app/ListDemo/page.js
