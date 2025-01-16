@@ -10,6 +10,7 @@ export default function Home() {
           <h1>WEB DEV 2</h1>
 
           <Link href={"/week-2"} className="hover:underline">Week 2</Link>
+          <Link href={"/week-3"} className="hover:underline">Week 3</Link>
         </div>
       </main>
     </div>
