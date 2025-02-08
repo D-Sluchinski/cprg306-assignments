@@ -10,9 +10,6 @@ export default function NewItem() {
 
     const handleName = (event) => {
         let newName = event.target.value;
-        if (newName == "") {
-            return alert("Name cannot be empty");
-        }
         setName(newName);
     };
     
@@ -26,6 +23,9 @@ export default function NewItem() {
 
     
     const handleSubmit = (event) => {
+        if (name == "") {
+            return alert("Name cannot be empty");
+        }
         event.preventDefault();
         let addItem = {name, quantity, category};
         console.log(addItem.name, addItem.quantity, addItem.category);
