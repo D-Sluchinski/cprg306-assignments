@@ -9,7 +9,7 @@ export default function NewItem() {
 
 
     const handleName = (event) => {
-        let newName = event.target.name;
+        let newName = event.target.value;
         if (newName == "") {
             return alert("Name cannot be empty");
         }
@@ -17,7 +17,7 @@ export default function NewItem() {
     };
     
     const handleCategory = (event) => {
-        let newCategory = event.target.category;
+        let newCategory = event.target.value;
         if (category == "") {
             return alert("Category cannot be empty");
         }
@@ -28,7 +28,7 @@ export default function NewItem() {
     const handleSubmit = (event) => {
         event.preventDefault();
         let addItem = {name, quantity, category};
-        console.log(addItem.name);
+        console.log(addItem.name, addItem.quantity, addItem.category);
         alert(`Name: ${name}, Quantity: ${quantity}, Category: ${category}`);
         resetAll();
     };
@@ -40,26 +40,22 @@ export default function NewItem() {
     };
 
 
-    let increment = () => {
-    
-        if(quantity <= 19) {
-            setQuantity(quantity+1);
-        }
-        else{
+    let increment = (event) => {
+        event.preventDefault();
+        if(quantity < 20) {
+            setQuantity(quantity + 1);
+        } else {
             warnPopup(quantity);
         }
-    
-        };
+    };
 
-    let decrement = () => {
-            
+    let decrement = (event) => {
+        event.preventDefault();
         if(quantity > 1) {
-            setQuantity(quantity-1);
-        }
-        else{
+            setQuantity(quantity - 1);
+        } else {
             warnPopup(quantity);
         }
-    
     };
 
     let warnPopup = (quantity) => {
@@ -100,20 +96,19 @@ export default function NewItem() {
                         <option value="household" className="text-black">Household</option>
                     </select>
 
-
                     <div className="flex flex-row pt-5 pl-10 pr-10">
-                        <button onChange={decrement} className="text-xl bg-red-900 hover:bg-red-500 rounded-l rounded-r p-2 text-xl font-bold w-8 grid justify-items-center" >-</button>
+                        <button onClick={(event)=>{decrement(event)}} className="text-xl bg-red-900 hover:bg-red-500 rounded-l  p-2 text-xl font-bold w-8 grid justify-items-center" >-</button>
                     <p className="bg-white p-2 text-xl font-bold text-black w-12 grid justify-items-center">{quantity}</p>
-                        <button onChange={increment} className="text-xl bg-green-900 hover:bg-green-500 rounded-r rounded-r p-2 text-xl font-bold w-8 grid justify-items-center">+</button>
+                        <button onClick={(event)=>{increment(event)}} className="text-xl bg-green-900 hover:bg-green-500 rounded-r p-2 text-xl font-bold w-8 grid justify-items-center">+</button>
                     </div>
                 
                     <button type="submit" className='bg-blue-500 p-2 mt-3  mr-auto ml-auto rounded-md grid justify-items-center' >Submit</button>
 
+      
+
                 </form>
 
-                
-
-                
+            
             </div>
         </main>
     );
