@@ -23,6 +23,8 @@ export default function ItemList() {
     return 0; // returns original order of list
   });
 
+  let previousCategory = null;
+
   return (
     <div>
       <div>
@@ -47,14 +49,20 @@ export default function ItemList() {
       </div>
 
       <ul>
-        {sortedItems.map((i) => (
-          <li key={i.id}>
-            {sortBy === "group" && (
-              <h1 className="capitalize mt-3 ml-4 bg-red-900 font-bold text-3xl 900 max-w-sm">{i.category}</h1>
-            )}
-            <Item {...i} props={i} />
-          </li>
-        ))}
+        {sortedItems.map((i) => {
+          const showCategoryHeader = sortBy === "group" && i.category !== previousCategory;
+          previousCategory = i.category;
+          return (
+            <li key={i.id}>
+              {showCategoryHeader && (
+                <h1 className="capitalize mt-3 ml-4 bg-red-900 font-bold text-3xl max-w-sm">
+                  {i.category}
+                </h1>
+              )}
+              <Item {...i} props={i} />
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
