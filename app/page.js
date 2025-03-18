@@ -16,6 +16,9 @@ export default function Home() {
           <li><Link href={"/week-5"} className="hover:underline">Week 5</Link></li>
           <li><Link href={"/week-6"} className="hover:underline">Week 6</Link></li>
           <li><Link href={"/week-7"} className="hover:underline">Week 7</Link></li>
+          <li><Link href={"/week-8"} className="hover:underline">Week 8</Link></li>
+          {/* <li><Link href={"/week-9"} className="hover:underline">Week 9</Link></li> */}
+          {/* <li><Link href={"/week-10"} className="hover:underline">Week 10</Link></li> */}
           </ul>
         </div>
       </main>
