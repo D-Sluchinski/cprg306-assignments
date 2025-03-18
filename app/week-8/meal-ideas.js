@@ -1,4 +1,5 @@
 "use client";
+import { stringify } from "postcss";
 import {useEffect, useState} from "react";
 
 export default function MealIdeas({ingredient}) {
@@ -25,25 +26,31 @@ export default function MealIdeas({ingredient}) {
     
     
     const loadMealIdeas = async () => {
-// fetchMealIdeas(ingredient);
-        // fetchMealIdeas(ingredient);
         const mealData = await fetchMealIdeas(ingredient);
-        setMeals(mealData); 
         
+        
+
+        if (mealData !== undefined) {
+            return setMeals(mealData);
+        }
+        else {
+            return setMeals(0);
+        }
+    
     };
     
     useEffect(() => {
         loadMealIdeas();
     }, [ingredient]);
 
-    
+    //meals.strMeal, o && e.idMeal === o.idMeal && d.length > 0 &&
     return (
         <div className="pt-[72px] pl-[10rem]">
             <h1 className="text-3xl font-bold ml-[7rem] pb-2">Meal Ideas</h1>
-            {meals.length === 0 ? 
+            {meals.idMeal === 0 ? 
             ( <p className="ml-4">Select an item to see meal ideas</p>) :
             (
-                meals.length > 0 ? (
+                meals.idMeal !== 0 && meals.length !== 0 ? (
                     <div>
                         <p className="ml-4">Here are some meal ideas using {ingredient}</p>
                         <ul>
